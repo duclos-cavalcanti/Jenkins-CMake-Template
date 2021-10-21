@@ -34,7 +34,8 @@ pipeline {
                 echo "Building version ${VERSION}..."
                 sh 'pwd'
                 sh 'ls'
-                sh 'ls project'
+                sh 'make build'
+                sh 'cd project'
                 // sh 'cd project/test/build'
                 // sh 'cmake ..'
                 // sh 'make'
@@ -42,12 +43,12 @@ pipeline {
         }
 
         stage('Test') {
-            steps {
-                when { // example of conditional
-                    expression {
-                        env.BRANCH_NAME == '*_test'
-                    }
+            when { // example of conditional
+                expression {
+                    env.BRANCH_NAME == 'master'
                 }
+            }
+            steps {
                 echo "Testing..."
                 // make report
                 sh 'pwd'
@@ -59,6 +60,7 @@ pipeline {
                 echo "Generating Coverage..."
                 // make coverage
                 sh 'pwd'
+                sh 'ls'
             }
         }
     }
