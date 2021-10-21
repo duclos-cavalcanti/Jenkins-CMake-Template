@@ -42,3 +42,5 @@ add_executable(bar ${PROJECT_SOURCES})
 
 include(debug)
 include(clean)
+include(test1)
+include(test2)
