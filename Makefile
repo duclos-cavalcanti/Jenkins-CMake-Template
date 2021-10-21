@@ -19,7 +19,7 @@ build:
 .PHONY: run
 run:
 	@echo "## Running project ##"
-	cd project/bin && ./foobar
+	cd project/bin && ./bar
 
 .PHONY: dummy1
 dummy1:
