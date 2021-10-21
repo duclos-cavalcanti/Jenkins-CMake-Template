@@ -32,6 +32,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building version ${VERSION}..."
+                sh 'pwd'
                 sh 'cd project/test/build'
                 sh 'cmake ..'
                 sh 'make'
