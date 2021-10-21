@@ -39,7 +39,6 @@ pipeline {
         }
 
         stage('Test') {
-            when {
             steps {
                 when { // example of conditional
                     expression {
