@@ -33,7 +33,7 @@ pipeline {
             steps {
                 echo "Building version ${VERSION}..."
                 sh 'cd project/test/build'
-                sh 'cmake ..''
+                sh 'cmake ..'
                 sh 'make'
             }
         }
