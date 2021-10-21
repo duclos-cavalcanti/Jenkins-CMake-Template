@@ -32,9 +32,9 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building version ${VERSION}..."
-                cd project/test/build 
-                cmake ..
-                make
+                sh 'cd project/test/build'
+                sh 'cmake ..''
+                sh 'make'
             }
         }
 
@@ -47,7 +47,7 @@ pipeline {
                 }
                 echo "Testing..."
                 // make report
-                pwd
+                sh 'pwd'
             }
         }
 
