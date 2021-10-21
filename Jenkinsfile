@@ -32,13 +32,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "Building version ${VERSION}..."
-                sh 'pwd'
-                sh 'ls'
                 sh 'make build'
-                sh 'cd project'
-                // sh 'cd project/test/build'
-                // sh 'cmake ..'
-                // sh 'make'
             }
         }
 
@@ -50,25 +44,23 @@ pipeline {
             }
             steps {
                 echo "Testing..."
-                // make report
-                sh 'pwd'
+                sh 'make test1'
+                sh 'make test2'
             }
         }
 
-        stage('Coverage') {
+        stage('Run') {
             steps {
-                echo "Generating Coverage..."
-                // make coverage
-                sh 'pwd'
-                sh 'ls'
+                echo "Running..."
+                sh 'make run'
             }
         }
     }
 
     post {
         always {  // always
-            // make reset
-            cleanWs()
+            echo "Cleaning up..."
+            sh 'make clean'
         }
         success {
             echo "Succeeded..."

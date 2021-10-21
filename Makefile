@@ -13,25 +13,24 @@ help:
 .PHONY: build
 build:
 	@echo "## Building project ##"
-	@cd project/build
-	@cmake ..
-	@make
+	cd project/build && cmake ..
+	cd project/build && make
 
 .PHONY: run
 run:
 	@echo "## Running project ##"
-	./project/bin/foobar
+	cd project/bin && ./foobar
 
 .PHONY: dummy1
 dummy1:
 	@echo "## Dummy 1 ##"
-	make test1
+	cd project/build && make test1
 
 .PHONY: dummy2
-dummy1:
+dummy2:
 	@echo "## Dummy 2 ##"
-	make test1
+	cd project/build && make test2
 
 .PHONY: clean
 clean:
-	make reset
+	cd project/build && make reset
