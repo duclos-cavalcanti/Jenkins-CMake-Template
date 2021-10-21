@@ -44,8 +44,8 @@ pipeline {
             }
             steps {
                 echo "Testing..."
-                sh 'make test1'
-                sh 'make test2'
+                sh 'make dummy1'
+                sh 'make dummy2'
             }
         }
 
