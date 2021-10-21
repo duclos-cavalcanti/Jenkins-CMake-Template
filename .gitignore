@@ -1,8 +1,10 @@
-bin/*
+*bin/*
+project/bin/*
+project/bin/
 
-build/*
+*build/*
 
-.cache
-.cache/
-.cache/*
+*.cache
+*.cache/
+*.cache/*
 
