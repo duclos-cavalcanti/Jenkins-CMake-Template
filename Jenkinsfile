@@ -34,9 +34,10 @@ pipeline {
                 echo "Building version ${VERSION}..."
                 sh 'pwd'
                 sh 'ls'
-                sh 'cd project/test/build'
-                sh 'cmake ..'
-                sh 'make'
+                sh 'ls project'
+                // sh 'cd project/test/build'
+                // sh 'cmake ..'
+                // sh 'make'
             }
         }
 
